@@ -1,0 +1,86 @@
+{
+	"professionals": [
+		{
+			"id": 1,
+			"image": "https://imgur.com/imkS67m.png",
+			"name": "Ana Luiza",
+			"specialty": "Clínico Geral",
+			"note": 4.5
+		},
+		{
+			"id": 2,
+			"image": "https://imgur.com/iyFgXHb.png",
+			"name": "Caroline Carvalho",
+			"specialty": "Nutricionista",
+			"note": 4.6
+		},
+		{
+			"id": 3,
+			"image": "https://imgur.com/ho9CUwp.png",
+			"name": "Camila Fernanda",
+			"specialty": "Oftamologista",
+			"note": 4.3
+		},
+		{
+			"id": 4,
+			"image": "https://imgur.com/sVAFzFy.png",
+			"name": "Bruno Divino",
+			"specialty": "Psiquiatra",
+			"note": 4.7
+		}
+	],
+	"queries": [
+		{
+			"id": 1,
+			"date": "2022-01-24",
+			"hour": "08:30",
+			"professional": [
+				{
+					"name": "Ana Luiza",
+					"specialty": "Clínico Geral"
+				}
+			],
+			"patient": "Larissa Gabriela",
+			"modality": "Particular"
+		},
+		{
+			"id": 2,
+			"date": "2022-01-25",
+			"hour": "08:30",
+			"professional": [
+				{
+					"name": "Caroline Carvalho",
+					"specialty": "Nutricionista"
+				}
+			],
+			"patient": "Guilherme Lira",
+			"modality": "Particular"
+		}
+	],
+	"assessment": [
+		{
+			"id": 1,
+			"date": "2022-04-01",
+			"hour": "10:30",
+			"professional": [
+				{
+					"name": "Ana Luiza",
+					"specialty": "Clínico Geral"
+				}
+			],
+			"note": 4.5
+		},
+		{
+			"id": 2,
+			"date": "2022-04-01",
+			"hour": "10:30",
+			"professional": [
+				{
+					"name": "Caroline Carvalho",
+					"specialty": "Nutricionista"
+				}
+			],
+			"note": 4.5
+		}
+	]
+}
