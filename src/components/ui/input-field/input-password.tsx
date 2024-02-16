@@ -9,8 +9,6 @@ type IconPasswordProps = ButtonProps
 export const IconPassword = ({ ...rest }: IconPasswordProps) => {
   const { showPassword } = useInputPassword()
 
-  console.log(showPassword)
-
   return (
     <S.InputAdornment>
       <S.IconButton
