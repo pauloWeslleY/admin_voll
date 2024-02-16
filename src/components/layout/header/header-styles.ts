@@ -17,7 +17,7 @@ export const HeaderWrapper = styled('div')(({ theme }) => ({
   flexGrow: 0.1,
 }))
 
-export const Link = styled(MuiLink)<MuiLinkProps>(({ theme }) => ({
+export const LogoutLink = styled(MuiLink)<MuiLinkProps>(({ theme }) => ({
   color: theme.palette.primary.main,
   fontWeight: theme.typography.fontWeightBold,
 }))

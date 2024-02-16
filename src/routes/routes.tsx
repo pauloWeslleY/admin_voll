@@ -1,8 +1,9 @@
 import { useRoutes } from 'react-router-dom'
-import { Home } from '@/pages/home/home'
+import { AppRoutes } from './app.routes'
+import { AuthRoutes } from './auth.routes'
 
 export const Routes = () => {
-  const routes = useRoutes([{ path: '/', element: <Home /> }])
+  const routes = useRoutes([AppRoutes, AuthRoutes])
 
   return routes
 }

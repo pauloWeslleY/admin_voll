@@ -1,16 +1,21 @@
+import { ReactNode } from 'react'
 import { Icon } from '@/components/ui'
-import Profile from '@/assets/account_circle.svg'
 import * as S from './header-styles'
+// import Profile from '@/assets/account_circle.svg'
 
-export const Header = () => {
+type HeaderProps = { children: ReactNode }
+
+export const Header = ({ children }: HeaderProps) => {
   return (
     <S.Header>
       <Icon.Logo />
 
-      <S.HeaderWrapper>
+      {children}
+
+      {/* <S.HeaderWrapper>
         <img src={Profile} alt="Imagem do Perfil do usuário" />
-        <S.Link href="#">sair</S.Link>
-      </S.HeaderWrapper>
+        <S.LogoutLink href="#">sair</S.LogoutLink>
+      </S.HeaderWrapper> */}
     </S.Header>
   )
 }

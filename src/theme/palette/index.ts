@@ -15,4 +15,8 @@ export const Palette = ({ theme }: PaletteProps): PaletteOptions => ({
     dark: COLORS.blue[400],
     contrastText: COLORS.blue[100],
   },
+  text: {
+    primary: COLORS.text[100],
+    secondary: COLORS.text[200],
+  },
 })
