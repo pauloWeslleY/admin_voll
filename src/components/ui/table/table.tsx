@@ -4,10 +4,12 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  useTheme,
 } from '@mui/material'
 import MuiTable from '@mui/material/Table'
 import { ConsultationProps } from '@/components/types'
 import * as S from './table-styles'
+import { grey } from '@mui/material/colors'
 
 const TABLE_HEADER = [
   'Data',
@@ -23,9 +25,14 @@ type TableProps = {
 }
 
 export const Table = ({ data }: TableProps) => {
+  const theme = useTheme()
+
   return (
-    <TableContainer component={Paper}>
-      <MuiTable sx={{ minWidth: 700 }} arial-label="table-customization">
+    <TableContainer component={Paper} sx={{ borderRadius: theme.spacing(2.6) }}>
+      <MuiTable
+        sx={{ minWidth: 700, background: grey[100] }}
+        arial-label="table-customization"
+      >
         <TableHead>
           <TableRow>
             {TABLE_HEADER.map((props, index) => (

@@ -1,3 +1,4 @@
+import { Avatar, Rating, useTheme } from '@mui/material'
 import { ProfessionalProps } from '@/components/types'
 import * as S from './card-styles'
 
@@ -6,17 +7,28 @@ type CardAssessmentProps = {
 }
 
 export const CardAssessment = ({ card }: CardAssessmentProps) => {
-  console.log(card)
+  const theme = useTheme()
 
   return (
     <S.Card>
-      <div>
-        <img
+      <S.CardContent>
+        <Avatar
           src={card.image}
           alt={`Foto de Perfil do Profissional ${card.name}`}
+          sx={{
+            width: 65,
+            height: 65,
+            border: `2px solid ${theme.palette.primary.light}`,
+          }}
         />
-        <p>hello</p>
-      </div>
+
+        <S.CardInfo>
+          <h3>{card.name}</h3>
+          <p>{card.specialty}</p>
+        </S.CardInfo>
+      </S.CardContent>
+
+      <Rating name="simple-controlled" value={card.note} readOnly={true} />
     </S.Card>
   )
 }

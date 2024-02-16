@@ -9,6 +9,7 @@ import {
 import { ConsultationProps, ProfessionalProps } from '@/components/types'
 import { DataGraphicProps, useDataGraphic } from './useDataGraphic'
 import * as S from './graphic-styles'
+import { COLORS } from '@/styles'
 
 type GraphicProps = {
   props: {
@@ -42,7 +43,7 @@ export const Graphic = ({ props }: GraphicProps) => {
           <Bar
             dataKey="consultation"
             barSize={30}
-            fill="#8884d8"
+            fill={COLORS.blue[400]}
             activeBar={<Rectangle fill="pink" stroke="blue" />}
           />
         </BarChart>
