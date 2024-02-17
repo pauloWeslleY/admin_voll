@@ -5,8 +5,7 @@ export const Home = () => {
 
   return (
     <div>
-      {' '}
-      <span>{JSON.stringify(user, null, 2)}</span>{' '}
+      <span>{JSON.stringify(user, null, 2)}</span>
     </div>
   )
 }

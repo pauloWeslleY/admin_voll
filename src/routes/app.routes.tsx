@@ -1,6 +1,7 @@
 import { RouteObject } from 'react-router-dom'
 import { RootLayout } from '@/layout'
 import { Home } from '@/pages'
+import { PrivateRoutes } from './private.routes'
 
 const AppRoutes: RouteObject = {
   path: '/',
@@ -9,7 +10,7 @@ const AppRoutes: RouteObject = {
     { path: 'home', element: <Home /> },
     {
       path: 'dashboard',
-      element: <h2>private</h2>,
+      element: <PrivateRoutes />,
       children: [{ path: 'home', element: <h2>Dashboard</h2> }],
     },
   ],

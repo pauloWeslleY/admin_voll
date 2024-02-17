@@ -1,17 +1,13 @@
+import { useEffect } from 'react'
 import { ToastContainer } from 'react-toastify'
 import { ScrollTop } from './components/scroll-top'
 import { Routes } from './routes'
-import { useAppDispatch, useAppSelector } from './store/hook'
-import 'react-toastify/dist/ReactToastify.css'
-import { useEffect } from 'react'
+import { useAppDispatch } from './store/hook'
 import { loadUser } from './store/actions/actions'
+import 'react-toastify/dist/ReactToastify.css'
 
 export const App = () => {
   const dispatch = useAppDispatch()
-  const { user, isLogged } = useAppSelector((state) => state.auth)
-
-  console.log(user)
-  console.log(isLogged)
 
   useEffect(() => {
     dispatch(loadUser())

@@ -12,7 +12,7 @@ export const HeaderWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-end',
-  gap: theme.spacing(8),
+  gap: theme.spacing(5),
   marginRight: theme.spacing(1.4),
   flexGrow: 0.1,
 }))

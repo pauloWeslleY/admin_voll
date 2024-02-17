@@ -84,7 +84,7 @@ export const useAuthentication = () => {
 
       saveUserInLocalStorage(data.user.uid)
       dispatch(setAuth(data))
-      navigate('/home')
+      navigate('/dashboard')
       toasts.success({ title: 'Usuário logado' })
     } catch (error: unknown) {
       if (error instanceof FirebaseError) {

@@ -1,9 +1,11 @@
 import { ReactNode } from 'react'
-import { Avatar, useTheme } from '@mui/material'
+import { Avatar, IconButton, useTheme } from '@mui/material'
+import LogoutIcon from '@mui/icons-material/Logout'
 import { Icon } from '@/components/ui'
 import { useAppSelector } from '@/store/hook'
 import { useAuthentication } from '@/pages/auth/hooks/useAuthentication'
 import * as S from './header-styles'
+import { NavLink } from '../navbar/navbar-styles'
 
 type HeaderProps = { children: ReactNode }
 
@@ -18,6 +20,9 @@ export const Header = ({ children }: HeaderProps) => {
 
       {isLogged ? (
         <S.HeaderWrapper>
+          <NavLink to="home">Home</NavLink>
+          <NavLink to="dashboard">Dashboard</NavLink>
+
           {user.photoUrl ? (
             <Avatar
               src={user.photoUrl}
@@ -32,9 +37,9 @@ export const Header = ({ children }: HeaderProps) => {
             <Icon.UserAccount sx={{ fontSize: 40 }} />
           )}
 
-          <S.LogoutLink href="#" onClick={handleLogout}>
-            sair
-          </S.LogoutLink>
+          <IconButton aria-label="logout" onClick={handleLogout}>
+            <LogoutIcon />
+          </IconButton>
         </S.HeaderWrapper>
       ) : (
         <> {children} </>
