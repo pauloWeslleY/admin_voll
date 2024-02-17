@@ -1,6 +1,7 @@
-import Background from '@/assets/background.svg'
 import { Icon } from '@/components/ui'
+import Background from '@/assets/background.svg'
 import { useAuth } from './useAuth'
+import { SignIn } from './modules'
 import * as S from './auth-styles'
 
 export const Authentication = () => {
@@ -18,6 +19,8 @@ export const Authentication = () => {
             ? 'Faça login em sua conta'
             : 'Faça seu cadastro'}
         </h2>
+
+        {signInOrSignUp === 'signIn' ? <SignIn /> : null}
 
         <S.AuthLink to="#">Esqueceu sua senha?</S.AuthLink>
 

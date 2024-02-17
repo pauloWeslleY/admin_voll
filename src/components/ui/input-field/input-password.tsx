@@ -1,14 +1,13 @@
 import { ButtonProps } from '@mui/base/Button'
 import Visibility from '@mui/icons-material/Visibility'
 import VisibilityOff from '@mui/icons-material/VisibilityOff'
-import { useInputPassword } from './useInputPassword'
 import * as S from './input-styles'
 
-type IconPasswordProps = ButtonProps
+type IconPasswordProps = ButtonProps & {
+  showPassword: boolean
+}
 
-export const IconPassword = ({ ...rest }: IconPasswordProps) => {
-  const { showPassword } = useInputPassword()
-
+export const IconPassword = ({ showPassword, ...rest }: IconPasswordProps) => {
   return (
     <S.InputAdornment>
       <S.IconButton
