@@ -1,13 +1,6 @@
-import {
-  Button,
-  FormHelperText,
-  IconPassword,
-  InputField,
-  Label,
-} from '@/components/ui'
+import { Button, FormGroup, IconPassword, InputField } from '@/components/ui'
 import { useAuth } from '../../hooks/useAuth'
 import { useSignUp } from './useSignUp'
-import * as S from './sign-up-styles'
 
 export const SignUp = () => {
   const { register, signUp, handleSubmit, errors } = useSignUp()
@@ -15,15 +8,10 @@ export const SignUp = () => {
 
   return (
     <form onSubmit={handleSubmit(signUp)} autoComplete="off">
-      <S.FormControl error={!!errors.username?.message}>
-        <Label
-          htmlFor="username"
-          props={{
-            label: 'Nome',
-            errors: errors.username?.message,
-          }}
-        />
-
+      <FormGroup
+        htmlFor="username"
+        props={{ label: 'Nome', errors: errors.username?.message }}
+      >
         <InputField
           {...register('username')}
           id="username"
@@ -31,18 +19,12 @@ export const SignUp = () => {
           placeholder="Insira seu nome"
           error={!!errors.username?.message}
         />
-        <FormHelperText errors={errors.username?.message} />
-      </S.FormControl>
+      </FormGroup>
 
-      <S.FormControl error={!!errors.email?.message}>
-        <Label
-          htmlFor="email"
-          props={{
-            label: 'Email',
-            errors: errors.email?.message,
-          }}
-        />
-
+      <FormGroup
+        htmlFor="email"
+        props={{ label: 'Email', errors: errors.email?.message }}
+      >
         <InputField
           {...register('email')}
           id="email"
@@ -50,17 +32,12 @@ export const SignUp = () => {
           placeholder="Insira seu endereço de email"
           error={!!errors.email?.message}
         />
-        <FormHelperText errors={errors.email?.message} />
-      </S.FormControl>
+      </FormGroup>
 
-      <S.FormControl error={!!errors.password?.message}>
-        <Label
-          htmlFor="password"
-          props={{
-            label: 'Senha',
-            errors: errors.password?.message,
-          }}
-        />
+      <FormGroup
+        htmlFor="password"
+        props={{ label: 'Senha', errors: errors.password?.message }}
+      >
         <InputField
           {...register('password')}
           id="password"
@@ -74,37 +51,25 @@ export const SignUp = () => {
             />
           }
         />
-        <FormHelperText errors={errors.password?.message} />
-      </S.FormControl>
+      </FormGroup>
 
-      <S.FormControl error={!!errors.phone?.message}>
-        <Label
-          htmlFor="phone"
-          props={{
-            label: 'Telefone',
-            errors: errors.phone?.message,
-          }}
-        />
-
+      <FormGroup
+        htmlFor="phone"
+        props={{ label: 'Telefone', errors: errors.phone?.message }}
+      >
         <InputField
           {...register('phone')}
           id="phone"
           type="text"
-          placeholder="Insira seu endereço de phone"
+          placeholder="Insira seu telefone"
           error={!!errors.phone?.message}
         />
-        <FormHelperText errors={errors.phone?.message} />
-      </S.FormControl>
+      </FormGroup>
 
-      <S.FormControl error={!!errors.cpf?.message}>
-        <Label
-          htmlFor="cpf"
-          props={{
-            label: 'Cpf',
-            errors: errors.cpf?.message,
-          }}
-        />
-
+      <FormGroup
+        htmlFor="cpf"
+        props={{ label: 'Cpf', errors: errors.cpf?.message }}
+      >
         <InputField
           {...register('cpf')}
           id="cpf"
@@ -112,27 +77,20 @@ export const SignUp = () => {
           placeholder="Insira seu cpf"
           error={!!errors.cpf?.message}
         />
-        <FormHelperText errors={errors.cpf?.message} />
-      </S.FormControl>
+      </FormGroup>
 
-      <S.FormControl error={!!errors.cpf?.message}>
-        <Label
-          htmlFor="photoUrl"
-          props={{
-            label: 'Foto',
-            errors: errors.cpf?.message,
-          }}
-        />
-
+      <FormGroup
+        htmlFor="photoUrl"
+        props={{ label: 'Foto', errors: errors.photoUrl?.message }}
+      >
         <InputField
           {...register('photoUrl')}
           id="photoUrl"
           type="text"
           placeholder="Insira a url da foto"
-          error={!!errors.cpf?.message}
+          error={!!errors.photoUrl?.message}
         />
-        <FormHelperText errors={errors.cpf?.message} />
-      </S.FormControl>
+      </FormGroup>
 
       <Button
         type="submit"

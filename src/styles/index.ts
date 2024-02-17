@@ -1,3 +1,5 @@
 export * from './fonts'
-export * from './box-shadow'
+export * from './sizes'
+export * from './rounded'
+export * from './shadow'
 export * from './colors-tokens'

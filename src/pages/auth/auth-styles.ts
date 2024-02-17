@@ -10,7 +10,9 @@ export const AuthWrapper = styled('div')<AuthWrapperProps>(({ image }) => ({
   backgroundPosition: 'center',
   backgroundSize: 'cover',
 
+  width: '100%',
   minHeight: '100vh',
+  overflow: 'auto',
 
   display: 'flex',
   justifyContent: 'center',
@@ -18,6 +20,9 @@ export const AuthWrapper = styled('div')<AuthWrapperProps>(({ image }) => ({
 
 export const AuthFormWrap = styled('div')(({ theme }) => ({
   width: 793,
+  minHeight: '100vh',
+  height: 'fit-content',
+
   background: theme.palette.common.white,
   paddingInline: theme.spacing(28),
   paddingBottom: theme.spacing(10),
