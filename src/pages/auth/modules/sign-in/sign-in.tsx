@@ -1,32 +1,29 @@
-import { red } from '@mui/material/colors'
 import {
   Button,
   FormHelperText,
   IconPassword,
   InputField,
+  Label,
 } from '@/components/ui'
 import { useSignIn } from './useSignIn'
+import { useAuth } from '../../hooks/useAuth'
 import * as S from './sign-in-styles'
 
 export const SignIn = () => {
-  const {
-    register,
-    handleSubmit,
-    signIn,
-    errors,
-    showPassword,
-    handleClickShowPassword,
-  } = useSignIn()
+  const { register, handleSubmit, signIn, errors } = useSignIn()
+  const { showPassword, handleClickShowPassword } = useAuth()
 
   return (
     <form onSubmit={handleSubmit(signIn)} autoComplete="off">
       <S.FormControl error={!!errors.email?.message}>
-        <label
+        <Label
           htmlFor="email"
-          style={{ color: errors.email?.message ? red[500] : '' }}
-        >
-          Email
-        </label>
+          props={{
+            label: 'Email',
+            errors: errors.email?.message,
+          }}
+        />
+
         <InputField
           {...register('email')}
           id="email"
@@ -37,16 +34,15 @@ export const SignIn = () => {
         <FormHelperText errors={errors.email?.message} />
       </S.FormControl>
 
-      <S.FormControl
-        sx={{ marginBottom: 8, marginTop: 4 }}
-        error={!!errors.password?.message}
-      >
-        <label
+      <S.FormControl error={!!errors.password?.message}>
+        <Label
           htmlFor="password"
-          style={{ color: errors.password?.message ? red[500] : '' }}
-        >
-          Senha
-        </label>
+          props={{
+            label: 'Senha',
+            errors: errors.password?.message,
+          }}
+        />
+
         <InputField
           {...register('password')}
           id="password"
@@ -63,7 +59,7 @@ export const SignIn = () => {
         <FormHelperText errors={errors.password?.message} />
       </S.FormControl>
 
-      <Button type="submit" label="Entrar" sx={{ width: 280 }} />
+      <Button type="submit" label="Entrar" sx={{ width: 280, marginTop: 8 }} />
     </form>
   )
 }

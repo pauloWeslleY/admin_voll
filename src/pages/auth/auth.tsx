@@ -1,7 +1,7 @@
 import { Icon } from '@/components/ui'
 import Background from '@/assets/background.svg'
-import { useAuth } from './useAuth'
-import { SignIn } from './modules'
+import { useAuth } from './hooks/useAuth'
+import { SignIn, SignUp } from './modules'
 import * as S from './auth-styles'
 
 export const Authentication = () => {
@@ -20,7 +20,7 @@ export const Authentication = () => {
             : 'Faça seu cadastro'}
         </h2>
 
-        {signInOrSignUp === 'signIn' ? <SignIn /> : null}
+        {signInOrSignUp === 'signIn' ? <SignIn /> : <SignUp />}
 
         <S.AuthLink to="#">Esqueceu sua senha?</S.AuthLink>
 

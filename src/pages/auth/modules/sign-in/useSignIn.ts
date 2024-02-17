@@ -1,8 +1,8 @@
-import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { SignInProps } from './sign-in-props'
+import { useAuthentication } from '../../hooks/useAuthentication'
 
 export const schemaSignIn = z.object({
   email: z.string().email({ message: 'Informe um email válido' }),
@@ -10,8 +10,9 @@ export const schemaSignIn = z.object({
 })
 
 export const useSignIn = () => {
-  const [showPassword, setShowPassword] = useState<boolean>(false)
+  const { handleSignIn } = useAuthentication()
   const {
+    reset,
     register,
     handleSubmit,
     formState: { errors },
@@ -21,14 +22,9 @@ export const useSignIn = () => {
     resolver: zodResolver(schemaSignIn),
   })
 
-  console.log('errors ==> ', errors)
-
   const signIn = (data: SignInProps) => {
-    console.log('data ==> ', data)
-  }
-
-  const handleClickShowPassword = () => {
-    setShowPassword((showPassword) => !showPassword)
+    handleSignIn(data)
+    reset()
   }
 
   return {
@@ -36,7 +32,5 @@ export const useSignIn = () => {
     register,
     errors,
     handleSubmit,
-    showPassword,
-    handleClickShowPassword,
   }
 }

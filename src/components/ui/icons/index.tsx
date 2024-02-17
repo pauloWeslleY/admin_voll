@@ -6,6 +6,7 @@ import { SVGInstagramIcon } from './instagram-icon'
 import { SVGFacebookIcon } from './facebook-icon'
 import { SVGGoogleIcon } from './google-icon'
 import { SVGWhatsAppIcon } from './whatsapp-icon'
+import { ProfileAccountIcon } from './profile-account'
 
 export const Icon = {
   Logo: SVGLogoIcon,
@@ -16,4 +17,5 @@ export const Icon = {
   Instagram: SVGInstagramIcon,
   Google: SVGGoogleIcon,
   WhatsApp: SVGWhatsAppIcon,
+  UserAccount: ProfileAccountIcon,
 }

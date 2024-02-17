@@ -3,6 +3,7 @@ import { useState } from 'react'
 type SignInOrSignUpProps = 'signIn' | 'signUp'
 
 export const useAuth = () => {
+  const [showPassword, setShowPassword] = useState<boolean>(false)
   const [signInOrSignUp, setSignInOrSignUp] =
     useState<SignInOrSignUpProps>('signIn')
 
@@ -14,8 +15,14 @@ export const useAuth = () => {
     changeAuth(signInOrSignUp === 'signIn' ? 'signUp' : 'signIn')
   }
 
+  const handleClickShowPassword = () => {
+    setShowPassword((showPassword) => !showPassword)
+  }
+
   return {
-    handleChangedSignInOrSignUp,
+    showPassword,
     signInOrSignUp,
+    handleChangedSignInOrSignUp,
+    handleClickShowPassword,
   }
 }

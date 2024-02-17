@@ -10,7 +10,7 @@ export const Button = styled(MuiButton)<MuiButtonProps>({
   fontWeight: FONTS.fontWeight.bold,
   padding: '12px 16px',
   borderRadius: spacing(2),
-  border: `1px solid ${COLORS.blue[300]}`,
+  border: `1px solid ${COLORS.blue[400]}`,
   lineHeight: FONTS.lineHeights.base,
   backgroundColor: COLORS.blue[300],
   color: COLORS.white,
@@ -29,7 +29,7 @@ export const Button = styled(MuiButton)<MuiButtonProps>({
     borderColor: COLORS.blue[100],
   },
 
-  '&:focus': {
-    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
-  },
+  // '&:focus': {
+  //   boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+  // },
 })
