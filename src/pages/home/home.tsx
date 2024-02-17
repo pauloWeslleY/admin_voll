@@ -1,5 +1,5 @@
 import { Chip, useTheme } from '@mui/material'
-import { Card, SectionSearching } from './components'
+import { Card, SectionSearching, Testimonials } from './components'
 import { useHome } from './useHome'
 import * as S from './home-styles'
 
@@ -29,6 +29,8 @@ export const Home = () => {
       </SectionSearching>
 
       <Card card={CARD_LIST} />
+
+      <Testimonials />
     </main>
   )
 }

@@ -1,3 +1,4 @@
+import { SHADOW } from '@/styles'
 import { styled } from '@mui/material'
 
 export const SectionSearchingWrap = styled('div')(({ theme }) => ({
@@ -5,7 +6,7 @@ export const SectionSearchingWrap = styled('div')(({ theme }) => ({
   marginInline: theme.spacing(32),
   marginBlock: theme.spacing(10),
   borderRadius: theme.spacing(2),
-  boxShadow: theme.shadows[6],
+  boxShadow: SHADOW[1],
 
   '& > form': {
     width: '100%',
