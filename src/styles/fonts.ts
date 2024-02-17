@@ -1,4 +1,8 @@
 export const FONTS = {
+  fontFamily: {
+    PUBLIC_SANS: `'Public Sans', sans-serif`,
+  },
+
   fontWeight: {
     hairline: 100,
     thin: 200,
@@ -9,10 +13,6 @@ export const FONTS = {
     bold: 700,
     extrabold: 800,
     black: 900,
-  },
-
-  fontFamily: {
-    PUBLIC_SANS: `'Public Sans', sans-serif`,
   },
 
   fontSizes: {

@@ -1,11 +1,34 @@
-import { useAppSelector } from '@/store/hook'
+import { Chip, useTheme } from '@mui/material'
+import { Card, SectionSearching } from './components'
+import { useHome } from './useHome'
+import * as S from './home-styles'
 
 export const Home = () => {
-  const { user } = useAppSelector((state) => state.auth)
+  const { CARD_LIST, SPECIALTY_LIST } = useHome()
+  const theme = useTheme()
 
   return (
-    <div>
-      <span>{JSON.stringify(user, null, 2)}</span>
-    </div>
+    <main>
+      <S.BannerHome />
+
+      <SectionSearching>
+        <S.SpecialtyListWrap>
+          <h2>Você pode estar procurando por estas categorias:</h2>
+
+          <ul>
+            {SPECIALTY_LIST.map((data) => (
+              <li key={data.key}>
+                <Chip
+                  label={data.label}
+                  sx={{ ...theme.typography.h4, borderRadius: 2 }}
+                />
+              </li>
+            ))}
+          </ul>
+        </S.SpecialtyListWrap>
+      </SectionSearching>
+
+      <Card card={CARD_LIST} />
+    </main>
   )
 }
