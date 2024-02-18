@@ -1,4 +1,4 @@
-import { styled } from '@mui/material'
+import { styled } from '@mui/system'
 import { inputClasses } from '@mui/base/Input'
 import { Button } from '@mui/base/Button'
 import { grey, red } from '@mui/material/colors'
@@ -61,14 +61,14 @@ export const InputElement = styled('input')(
 )
 
 export const IconButton = styled(Button)(
-  ({ theme }) => `
+  () => `
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: none;
   background: inherit;
   cursor: pointer;
-  color: ${theme.palette.mode === 'dark' ? grey[300] : grey[700]};
+  color: ${grey[700]};
   `,
 )
 

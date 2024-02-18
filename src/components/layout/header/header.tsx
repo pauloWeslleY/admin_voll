@@ -21,7 +21,7 @@ export const Header = ({ children }: HeaderProps) => {
       {isLogged ? (
         <S.HeaderWrapper>
           <NavLink to="home">Home</NavLink>
-          <NavLink to="dashboard">Dashboard</NavLink>
+          <NavLink to="dashboard/home">Dashboard</NavLink>
 
           {user.photoUrl ? (
             <Avatar

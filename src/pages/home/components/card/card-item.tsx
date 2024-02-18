@@ -9,7 +9,7 @@ export const CardItem = ({ card }: CardItemProps) => {
   const { icon: Icon, text } = card
 
   return (
-    <S.CardItem elevation={5}>
+    <S.CardItem elevation={0}>
       <Icon sx={{ width: 72, height: 72 }} />
       <p>{text}</p>
     </S.CardItem>

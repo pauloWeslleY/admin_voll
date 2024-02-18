@@ -68,7 +68,7 @@ export const SignUp = () => {
 
       <FormGroup
         htmlFor="cpf"
-        props={{ label: 'Cpf', errors: errors.cpf?.message }}
+        props={{ label: 'CPF', errors: errors.cpf?.message }}
       >
         <InputField
           {...register('cpf')}

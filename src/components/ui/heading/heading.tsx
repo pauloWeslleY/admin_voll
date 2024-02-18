@@ -1,7 +1,5 @@
-import { ComponentProps, ReactNode } from 'react'
-import IconGraphic from '@/assets/icon_graphic.svg'
-import IconAssessment from '@/assets/icon_assessment.svg'
-import IconConsultation from '@/assets/icon_consultation.svg'
+import { ComponentProps, ReactNode, useMemo } from 'react'
+import { Icon } from '..'
 import * as S from './heading-styles'
 
 type HeadingProps = ComponentProps<typeof S.HeadingWrapper> & {
@@ -9,24 +7,27 @@ type HeadingProps = ComponentProps<typeof S.HeadingWrapper> & {
   children: ReactNode
 }
 
-type ListImageProps = {
-  graphic: string
-  assessment: string
-  consultation: string
-}
-
 export const Heading = ({ image, children, ...rest }: HeadingProps) => {
-  const listOfImages: ListImageProps = {
-    graphic: IconGraphic,
-    assessment: IconAssessment,
-    consultation: IconConsultation,
-  }
+  const IconHeading = useMemo(() => {
+    switch (image) {
+      case 'assessment':
+        return <Icon.Assessment />
+
+      case 'graphic':
+        return <Icon.Graphic />
+
+      case 'consultation':
+        return <Icon.Consultation />
+
+      default:
+        return null
+    }
+  }, [image])
 
   return (
     <S.HeadingWrapper {...rest}>
-      {image && (
-        <S.HeadingIcon image={listOfImages[image as keyof ListImageProps]} />
-      )}
+      {image && IconHeading}
+
       {children}
     </S.HeadingWrapper>
   )

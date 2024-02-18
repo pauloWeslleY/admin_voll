@@ -1,6 +1,6 @@
-import { FONTS } from '@/styles'
-import { alpha, styled } from '@mui/material'
 import { Link, LinkProps } from 'react-router-dom'
+import { alpha, styled } from '@mui/material'
+import { FONTS } from '@/styles'
 
 export const NavBar = styled('div')(({ theme }) => ({
   display: 'flex',

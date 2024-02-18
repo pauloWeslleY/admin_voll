@@ -83,8 +83,10 @@ export const useAuthentication = () => {
       const data = await signInWithEmailAndPassword(auth, email, password)
 
       saveUserInLocalStorage(data.user.uid)
+
       dispatch(setAuth(data))
-      navigate('/dashboard')
+
+      navigate('/dashboard/home')
       toasts.success({ title: 'Usuário logado' })
     } catch (error: unknown) {
       if (error instanceof FirebaseError) {

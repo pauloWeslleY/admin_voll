@@ -8,8 +8,6 @@ const userService = {
     const responseDoc = await getDoc(userDocRef)
     const data = responseDoc.data() as UserProps
 
-    console.log('user ==> ', data)
-
     return data
   },
 }

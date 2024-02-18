@@ -9,7 +9,7 @@ export const NavBar = () => {
   return (
     <S.NavBar>
       <S.NavLink to="#">Sobre</S.NavLink>
-      <S.NavLink to="#">Cadastre-se</S.NavLink>
+      <S.NavLink to="/auth">Cadastre-se</S.NavLink>
 
       <Input placeholder="Digite sua busca" />
 

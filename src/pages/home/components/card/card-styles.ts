@@ -1,4 +1,4 @@
-import { COLORS } from '@/styles'
+import { COLORS, SHADOW } from '@/styles'
 import { styled } from '@mui/material'
 import MuiCard, { CardProps as MuiCardProps } from '@mui/material/Card'
 
@@ -15,6 +15,7 @@ export const CardWrapper = styled('div')(({ theme }) => ({
 
 export const CardItem = styled(MuiCard)<MuiCardProps>(({ theme }) => ({
   background: COLORS.grey[100],
+  boxShadow: SHADOW[1],
   padding: theme.spacing(4, 2),
   borderRadius: 8,
 

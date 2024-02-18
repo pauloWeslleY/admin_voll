@@ -25,7 +25,5 @@ export const useDataGraphic = ({
     }))
   }
 
-  console.log(data)
-
   return data
 }

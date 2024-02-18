@@ -2,6 +2,7 @@ import { styled } from '@mui/material'
 import MuiButton, { ButtonProps as MuiButtonProps } from '@mui/material/Button'
 import { COLORS, FONTS } from '@/styles'
 import { spacing } from '@/styles/utilities'
+import { grey } from '@mui/material/colors'
 
 export const Button = styled(MuiButton)<MuiButtonProps>({
   boxShadow: 'none',
@@ -29,7 +30,12 @@ export const Button = styled(MuiButton)<MuiButtonProps>({
     borderColor: COLORS.blue[100],
   },
 
-  // '&:focus': {
-  //   boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
-  // },
+  '&.Mui-disabled': {
+    background: grey[400],
+    color: grey[700],
+    border: 0,
+    cursor: 'default',
+    boxShadow: 'none',
+    transform: 'scale(1)',
+  },
 })

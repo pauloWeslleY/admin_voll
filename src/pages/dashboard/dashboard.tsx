@@ -1,4 +1,5 @@
-import { Typography, useTheme } from '@mui/material'
+import { Navigate, useLocation, useNavigate } from 'react-router-dom'
+import { Stack, Typography, useTheme } from '@mui/material'
 import { Assessment, Wrapper } from '@/components/layout'
 import { Button, Graphic, Heading, Table } from '@/components/ui'
 import { useDataConsultation } from '@/hooks/useDataConsultation'
@@ -8,7 +9,11 @@ import { FONTS } from '@/styles'
 export const DashBoard = () => {
   const { data: dataConsultation } = useDataConsultation()
   const { data: dataProfessional } = useDataProfessional()
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
   const theme = useTheme()
+
+  if (pathname === 'dashboard') return <Navigate to="/dashboard/home" />
 
   return (
     <Wrapper>
@@ -22,7 +27,13 @@ export const DashBoard = () => {
         </Typography>
       </Heading>
 
-      <Button label="Cadastrar especialista" />
+      <Stack flexDirection="row" alignItems="center" gap={3}>
+        <Button label="Cadastrar especialista" />
+        <Button
+          label="Cadastrar clinica"
+          onClick={() => navigate('/dashboard/clinics')}
+        />
+      </Stack>
 
       <Heading image="consultation" sx={{ marginBlock: theme.spacing(8) }}>
         <Typography

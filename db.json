@@ -82,5 +82,21 @@
 			],
 			"note": 4.5
 		}
+	],
+	"clinics": [
+		{
+			"name": "Clinica Jardim Sul",
+			"email": "clinica@jardim.sul",
+			"cnpj": "78.987.789/4567-78",
+			"corporateReason": "Clinica Pediatra JS",
+			"phone": "(11) 5642-5460",
+			"cep": "45789-156",
+			"address": {
+				"street": "Rua 9 de julho",
+				"number": "46",
+				"state": "AM",
+				"complement": "comercial"
+			}
+		}
 	]
 }

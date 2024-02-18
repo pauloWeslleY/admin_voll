@@ -1,6 +1,6 @@
+import { grey } from '@mui/material/colors'
 import { ElementType } from 'react'
 import * as S from './input-styles'
-import { grey } from '@mui/material/colors'
 
 type InputIconProps = { icon: ElementType }
 

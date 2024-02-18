@@ -1,6 +1,6 @@
 import { RouteObject } from 'react-router-dom'
 import { RootLayout } from '@/layout'
-import { Home } from '@/pages'
+import { Clinics, DashBoard, Home } from '@/pages'
 import { PrivateRoutes } from './private.routes'
 
 const AppRoutes: RouteObject = {
@@ -11,7 +11,10 @@ const AppRoutes: RouteObject = {
     {
       path: 'dashboard',
       element: <PrivateRoutes />,
-      children: [{ path: 'home', element: <h2>Dashboard</h2> }],
+      children: [
+        { path: 'home', element: <DashBoard /> },
+        { path: 'clinics', element: <Clinics /> },
+      ],
     },
   ],
 }
