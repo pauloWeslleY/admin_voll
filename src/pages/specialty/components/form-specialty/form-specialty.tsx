@@ -1,5 +1,12 @@
 import { useState } from 'react'
-import { Button, Checkbox, FormControlLabel, Switch } from '@mui/material'
+import {
+  Button,
+  Checkbox,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
+  Switch,
+} from '@mui/material'
 import Typography from '@mui/material/Typography'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import { FormGroup, InputField, InputIcon } from '@/components/ui'
@@ -12,7 +19,7 @@ const plansHealth = [
   'Amil',
   'BioSaúde',
   'Biovida',
-  'outro',
+  'Outro',
 ]
 
 export const FormSpecialty = () => {
@@ -127,6 +134,30 @@ export const FormSpecialty = () => {
         </FormGroup>
       </S.FormGroupAddress>
 
+      <S.FormControl>
+        <label htmlFor="radio-buttons-group-label">Possui plano saúde</label>
+        <RadioGroup
+          aria-labelledby="radio-buttons-group-label"
+          name="row-radio-buttons-group"
+          row
+        >
+          <FormControlLabel value="yes" control={<Radio />} label="Sim" />
+          <FormControlLabel value="no" control={<Radio />} label="Não" />
+        </RadioGroup>
+      </S.FormControl>
+
+      <S.FormControl>
+        <label htmlFor="radio-buttons-group-label">Está ativo</label>
+        <RadioGroup
+          aria-labelledby="radio-buttons-group-label"
+          name="row-radio-buttons-group"
+          row
+        >
+          <FormControlLabel value="yes" control={<Radio />} label="Sim" />
+          <FormControlLabel value="no" control={<Radio />} label="Não" />
+        </RadioGroup>
+      </S.FormControl>
+
       <S.FormSwitch>
         <label>Atende por plano?</label>
         <Switch checked={showPlans} onClick={handleShowPlans} />
@@ -142,12 +173,7 @@ export const FormSpecialty = () => {
               key={index}
               componentsProps={{ ...Typography }}
               label={props}
-              control={
-                <Checkbox
-                  icon={<S.CheckIcon />}
-                  checkedIcon={<S.CheckedIcon />}
-                />
-              }
+              control={<Checkbox />}
             />
           ))}
         </S.FormGroupCheck>

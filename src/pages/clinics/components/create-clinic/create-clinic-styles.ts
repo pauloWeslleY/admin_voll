@@ -2,7 +2,8 @@ import { Link, LinkProps, styled } from '@mui/material'
 import MuiFormGroup, {
   FormGroupProps as MuiFormGroupProps,
 } from '@mui/material/FormGroup'
-import { COLORS, FONTS, ROUNDED } from '@/styles'
+import { COLORS, ROUNDED } from '@/styles'
+import { Label } from '@/components/ui'
 
 export const FormContainer = styled(MuiFormGroup)<MuiFormGroupProps>(
   ({ theme }) => ({
@@ -14,10 +15,7 @@ export const FormContainer = styled(MuiFormGroup)<MuiFormGroupProps>(
     columnGap: theme.spacing(2),
 
     '& > label': {
-      ...theme.typography.body1,
-      fontSize: FONTS.fontSizes.lg,
-      fontWeight: theme.typography.fontWeightBold,
-      color: theme.palette.primary.dark,
+      ...Label(theme),
       marginTop: theme.spacing(2),
 
       gridColumn: 'span 3',

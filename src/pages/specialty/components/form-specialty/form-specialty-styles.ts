@@ -1,17 +1,13 @@
-import { Theme, styled } from '@mui/material'
+import { styled } from '@mui/material'
 import MuiFormGroup, {
   FormGroupProps as MuiFormGroupProps,
 } from '@mui/material/FormGroup'
+import MuiFormControl, {
+  FormControlProps as MuiFormControlProps,
+} from '@mui/material/FormControl'
 import { grey, red } from '@mui/material/colors'
-import { COLORS, FONTS } from '@/styles'
-
-const Label = (theme: Theme) => ({
-  ...theme.typography.body1,
-  fontSize: FONTS.fontSizes.lg,
-  fontWeight: theme.typography.fontWeightBold,
-  color: theme.palette.primary.dark,
-  marginTop: theme.spacing(2),
-})
+import { Label } from '@/components/ui'
+import { COLORS } from '@/styles'
 
 export const FormGroupAddress = styled(MuiFormGroup)<MuiFormGroupProps>(
   ({ theme }) => ({
@@ -23,6 +19,7 @@ export const FormGroupAddress = styled(MuiFormGroup)<MuiFormGroupProps>(
 
     '& > label': {
       gridColumn: 'span 2',
+      marginTop: theme.spacing(2),
       ...Label(theme),
     },
   }),
@@ -40,12 +37,23 @@ export const FormSwitch = styled('div')(({ theme }) => ({
 
   '& > label': {
     ...Label(theme),
+    marginTop: theme.spacing(2),
   },
 
   '& > span': {
     ...theme.typography.subtitle2,
   },
 }))
+
+export const FormControl = styled(MuiFormControl)<MuiFormControlProps>(
+  ({ theme }) => ({
+    gridColumn: 'span 4',
+
+    '& > label': {
+      ...Label(theme),
+    },
+  }),
+)
 
 export const FormGroupCheck = styled(MuiFormGroup)<MuiFormGroupProps>(
   ({ theme }) => ({

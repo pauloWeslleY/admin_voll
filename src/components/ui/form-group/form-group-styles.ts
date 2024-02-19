@@ -7,6 +7,7 @@ import MuiFormHelperText, {
   FormHelperTextProps as MuiFormHelperTextProps,
 } from '@mui/material/FormHelperText'
 import { FONTS } from '@/styles'
+import { Label } from '../index'
 
 export const FormControl = styled(MuiFormControl)<MuiFormControlProps>(
   ({ theme }) => ({
@@ -17,10 +18,7 @@ export const FormControl = styled(MuiFormControl)<MuiFormControlProps>(
     width: '100%',
 
     '& > label': {
-      ...theme.typography.body1,
-      fontSize: FONTS.fontSizes.lg,
-      fontWeight: theme.typography.fontWeightBold,
-      color: theme.palette.primary.dark,
+      ...Label(theme),
     },
   }),
 )
