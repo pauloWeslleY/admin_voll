@@ -6,15 +6,14 @@ import { ThemeCustomization } from './theme'
 import { store } from './store'
 import { App } from './App'
 
-/* <React.StrictMode> */
-
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <Provider store={store}>
-    <ThemeCustomization>
-      <Router basename="/">
-        <App />
-      </Router>
-    </ThemeCustomization>
-  </Provider>,
+  <React.StrictMode>
+    <Provider store={store}>
+      <ThemeCustomization>
+        <Router basename="/">
+          <App />
+        </Router>
+      </ThemeCustomization>
+    </Provider>
+  </React.StrictMode>,
 )
-// </React.StrictMode>,

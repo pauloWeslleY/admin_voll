@@ -9,7 +9,7 @@ export const InputRoot = styled('div')(
   border-radius: 8px;
   background: ${grey[100]};
   color: ${grey[50]};
-  border: 2px solid ${grey[200]};
+  border: 2px solid ${grey[100]};
   box-shadow: 0px 2px 4px rgba(0,0,0, 0.05);
   display: flex;
   align-items: center;
@@ -40,11 +40,11 @@ export const InputElement = styled('input')(
   () => `
   font-size: ${FONTS.fontSizes.lg};
   font-weight: ${FONTS.fontWeight.semibold};
-  font-family: inherit;
+  font-family: ${FONTS.fontFamily.PUBLIC_SANS};
   line-height: 1.5;
   flex-grow: 1;
   color: ${COLORS.blue[300]};
-  background: inherit;
+  background: ${grey[50]};
   border: none;
   border-radius: inherit;
   padding: 8px 12px;
@@ -72,9 +72,11 @@ export const IconButton = styled(Button)(
   `,
 )
 
-export const InputAdornment = styled('div')`
+export const InputAdornment = styled('div')(
+  () => `
   margin: 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-`
+  `,
+)

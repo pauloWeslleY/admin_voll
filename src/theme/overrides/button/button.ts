@@ -7,20 +7,33 @@ declare module '@mui/material/Button' {
   }
 }
 
-export const useButtonDefault = {
-  boxShadow: 'none',
-  textTransform: 'uppercase',
-  fontSize: FONTS.fontSizes.md,
-  fontWeight: FONTS.fontWeight.bold,
-  padding: '12px 16px',
-  borderRadius: '2rem',
-  border: `1px solid ${COLORS.blue[400]}`,
-  lineHeight: FONTS.lineHeights.base,
-  backgroundColor: COLORS.blue[300],
-  color: COLORS.white,
-}
+// export const useButtonDefault = {
+//   boxShadow: 'none',
+//   textTransform: 'uppercase',
+//   fontSize: FONTS.fontSizes.md,
+//   fontWeight: FONTS.fontWeight.bold,
+//   padding: '12px 16px',
+//   borderRadius: '2rem',
+//   border: `1px solid ${COLORS.blue[400]}`,
+//   lineHeight: FONTS.lineHeights.base,
+//   backgroundColor: COLORS.blue[300],
+//   color: COLORS.white,
+// }
 
 export const Button = () => {
+  const buttonDefault = {
+    boxShadow: 'none',
+    textTransform: 'uppercase',
+    fontSize: FONTS.fontSizes.md,
+    fontWeight: FONTS.fontWeight.bold,
+    padding: '12px 16px',
+    borderRadius: '2rem',
+    border: `1px solid ${COLORS.blue[400]}`,
+    lineHeight: FONTS.lineHeights.base,
+    backgroundColor: COLORS.blue[300],
+    color: COLORS.white,
+  }
+
   const disabledStyle = {
     '&.Mui-disabled': {
       backgroundColor: grey[200],
@@ -35,7 +48,7 @@ export const Button = () => {
   const containedStyles = {
     '&.MuiButton-contained': {
       background: COLORS.blue[100],
-      ...useButtonDefault,
+      ...buttonDefault,
     },
   }
 
@@ -61,6 +74,8 @@ export const Button = () => {
     MuiButton: {
       defaultProps: {
         disableElevation: true,
+        disableFocusRipple: true,
+        disableRipple: true,
       },
       styleOverrides: {
         root: {
@@ -73,6 +88,7 @@ export const Button = () => {
           lineHeight: FONTS.lineHeights.base,
           fontWeight: FONTS.fontWeight.bold,
           fontSize: FONTS.fontSizes.md,
+
           ...hoverStyle,
           ...activeStyle,
         },

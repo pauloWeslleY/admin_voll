@@ -1,5 +1,5 @@
-import { useAppSelector } from '@/store/hook'
 import { Navigate, Outlet } from 'react-router-dom'
+import { useAppSelector } from '@/store/hook'
 
 const PrivateRoutes = () => {
   const { isLogged } = useAppSelector((state) => state.auth)

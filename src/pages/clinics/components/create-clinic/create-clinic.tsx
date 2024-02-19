@@ -6,8 +6,8 @@ import { Button, FormGroup, InputField, InputIcon } from '@/components/ui'
 import { useCreateClinic } from './hook/useCreateClinic'
 import { formatCNPJ } from '@/utils/format-cnpj/format-cnpj'
 import { useAppSelector } from '@/store/hook'
-import * as S from './create-clinic-styles'
 import { spacing } from '@/styles/utilities'
+import * as S from './create-clinic-styles'
 
 export const CreateClinic = () => {
   const { step } = useAppSelector((state) => state.stepper)
@@ -130,7 +130,6 @@ export const CreateClinic = () => {
             <FormGroup
               htmlFor="street"
               props={{
-                label: '',
                 errors: errors.address?.street?.message,
               }}
               sx={{ gridColumn: 'span 3' }}
@@ -147,7 +146,6 @@ export const CreateClinic = () => {
             <FormGroup
               htmlFor="number"
               props={{
-                label: '',
                 errors: errors.address?.number?.message,
               }}
               sx={{ gridColumn: '1 / 3' }}
@@ -164,7 +162,6 @@ export const CreateClinic = () => {
             <FormGroup
               htmlFor="complement"
               props={{
-                label: '',
                 errors: errors.address?.complement?.message,
               }}
               sx={{ gridColumn: 'span 1' }}
@@ -181,7 +178,6 @@ export const CreateClinic = () => {
             <FormGroup
               htmlFor="state"
               props={{
-                label: '',
                 errors: errors.address?.state?.message,
               }}
               sx={{ gridColumn: 'span 1' }}
@@ -210,15 +206,9 @@ export const CreateClinic = () => {
                 Avançar
               </Button>
             ) : (
-              <>
-                <MuiButton
-                  type="submit"
-                  sx={{ width: 200, py: 2, mt: 5 }}
-                  // disabled={isDisabledData}
-                >
-                  Cadastrar
-                </MuiButton>
-              </>
+              <MuiButton type="submit" sx={{ width: 200, py: 2, mt: 5 }}>
+                Cadastrar
+              </MuiButton>
             )}
           </>
         )}

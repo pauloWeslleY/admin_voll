@@ -1,24 +1,29 @@
 import { Link, LinkProps, styled } from '@mui/material'
+import MuiFormGroup, {
+  FormGroupProps as MuiFormGroupProps,
+} from '@mui/material/FormGroup'
 import { COLORS, FONTS, ROUNDED } from '@/styles'
 
-export const FormContainer = styled('div')(({ theme }) => ({
-  gridColumn: 'span 3',
-
-  width: '100%',
-  display: 'grid',
-  gridTemplateColumns: 'repeat(2, 1fr)',
-  columnGap: theme.spacing(2),
-
-  '& > label': {
-    ...theme.typography.body1,
-    fontSize: FONTS.fontSizes.lg,
-    fontWeight: theme.typography.fontWeightBold,
-    color: theme.palette.primary.dark,
-    marginTop: theme.spacing(2),
-
+export const FormContainer = styled(MuiFormGroup)<MuiFormGroupProps>(
+  ({ theme }) => ({
     gridColumn: 'span 3',
-  },
-}))
+
+    width: '100%',
+    display: 'grid',
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    columnGap: theme.spacing(2),
+
+    '& > label': {
+      ...theme.typography.body1,
+      fontSize: FONTS.fontSizes.lg,
+      fontWeight: theme.typography.fontWeightBold,
+      color: theme.palette.primary.dark,
+      marginTop: theme.spacing(2),
+
+      gridColumn: 'span 3',
+    },
+  }),
+)
 
 export const FormLink = styled(Link)<LinkProps>(({ theme }) => ({
   width: 200,

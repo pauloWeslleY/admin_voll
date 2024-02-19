@@ -7,7 +7,7 @@ type FormGroupProps = LabelHTMLAttributes<HTMLLabelElement> & {
   children: ReactNode
   sx?: SxProps<Theme>
   props: {
-    label: string
+    label?: string
     errors: string | undefined
   }
 }

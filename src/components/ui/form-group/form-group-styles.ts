@@ -25,11 +25,7 @@ export const FormControl = styled(MuiFormControl)<MuiFormControlProps>(
   }),
 )
 
-type FormHelperProps = MuiFormHelperTextProps & {
-  error?: boolean
-}
-
-export const FormHelper = styled(MuiFormHelperText)<FormHelperProps>(
+export const FormHelper = styled(MuiFormHelperText)<MuiFormHelperTextProps>(
   ({ theme }) => ({
     ...theme.typography.subtitle1,
     fontSize: FONTS.fontSizes.sm,

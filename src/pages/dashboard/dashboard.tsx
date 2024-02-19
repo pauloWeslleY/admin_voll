@@ -25,7 +25,12 @@ export const DashBoard = () => {
       </Heading>
 
       <Stack flexDirection="row" alignItems="center" gap={3}>
-        <Button>Cadastrar especialista</Button>
+        <Button
+          variant="default"
+          onClick={() => navigate('/dashboard/specialty')}
+        >
+          Cadastrar especialista
+        </Button>
         <Button onClick={() => navigate('/dashboard/clinics')}>
           Cadastrar clinica
         </Button>
