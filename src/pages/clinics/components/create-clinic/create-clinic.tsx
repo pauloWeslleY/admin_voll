@@ -211,7 +211,11 @@ export const CreateClinic = () => {
               </Button>
             ) : (
               <>
-                <MuiButton type="submit" sx={{ width: 200, py: 2, mt: 5 }}>
+                <MuiButton
+                  type="submit"
+                  sx={{ width: 200, py: 2, mt: 5 }}
+                  // disabled={isDisabledData}
+                >
                   Cadastrar
                 </MuiButton>
               </>

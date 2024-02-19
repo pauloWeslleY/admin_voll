@@ -1,13 +1,13 @@
 import { addDoc } from 'firebase/firestore'
 import { ptBR } from 'date-fns/locale/pt-BR'
 import { format } from 'date-fns'
-import { ClinicProps } from '@/components/types/clinic-props'
+import { ClinicType, CreateClinicProps } from '@/components/types/clinic-props'
 import { useAppDispatch, useAppSelector } from '@/store/hook'
 import { toasts } from '@/components/ui'
 import { nextStep } from '@/store/reducers'
 import { collectionClinics } from '@/config/firebase/collections'
 
-type AddClinicProps = { data: ClinicProps }
+type AddClinicProps = { data: CreateClinicProps }
 
 export const useHandleAddClinic = () => {
   const dispatch = useAppDispatch()
@@ -21,7 +21,7 @@ export const useHandleAddClinic = () => {
       return toasts.error({ title: 'Clinica já cadastrada' })
     }
 
-    const dataClinic = {
+    const dataClinic: ClinicType = {
       ...data,
       owner: user.uid,
       createdAt: format(new Date(), "d 'de' MMMM 'de' yyyy", {
@@ -30,6 +30,13 @@ export const useHandleAddClinic = () => {
     }
 
     dispatch(nextStep())
+
+    // if (Object.assign(clinic).length >= 7) {
+    //   const [updateClinic] = clinics.filter((props) => props.cnpj === data.cnpj)
+    //   const updatedDocRef = doc(db, 'clinics', updateClinic.id)
+    //   await updateDoc(updatedDocRef, { ...data })
+    //   toasts.success({ title: 'Clinica foi atualizada' })
+    // }
 
     await addDoc(collectionClinics, dataClinic)
       .then(() => {

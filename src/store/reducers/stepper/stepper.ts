@@ -1,13 +1,13 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { ClinicProps } from '@/components/types/clinic-props'
+import { CreateClinicProps } from '@/components/types/clinic-props'
 
 type SetFieldProps = {
-  data: ClinicProps
+  data: CreateClinicProps
 }
 
 const INITIAL_STATE = {
   step: 0,
-  data: {} as ClinicProps,
+  data: {} as CreateClinicProps,
 }
 
 const stepperSlice = createSlice({

@@ -1,10 +1,10 @@
 import { getDocs, query, where } from 'firebase/firestore'
 import { collectionClinics } from '@/config/firebase/collections'
-import { ClinicsType } from '@/components/types/clinic-props'
+import { ClinicProps } from '@/components/types/clinic-props'
 
 const clinicServices = {
   get: async (uid: string) => {
-    const clinicList: ClinicsType[] = []
+    const clinicList: ClinicProps[] = []
 
     const queryClinics = query(collectionClinics, where('owner', '==', uid))
 
@@ -23,7 +23,7 @@ const clinicServices = {
         createdAt: doc.data().createdAt,
         experts: doc.data().experts,
         owner: doc.data().owner,
-      } as ClinicsType)
+      } as ClinicProps)
     })
 
     return clinicList

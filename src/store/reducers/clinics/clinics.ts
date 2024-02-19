@@ -1,11 +1,11 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { ClinicsType } from '@/components/types/clinic-props'
+import { ClinicProps } from '@/components/types/clinic-props'
 
 const clinicsSlice = createSlice({
   name: 'clinics',
-  initialState: [] as ClinicsType[],
+  initialState: [] as ClinicProps[],
   reducers: {
-    getClinics: (_, { payload }: PayloadAction<ClinicsType[]>) => {
+    getClinics: (_, { payload }: PayloadAction<ClinicProps[]>) => {
       return payload
     },
   },
