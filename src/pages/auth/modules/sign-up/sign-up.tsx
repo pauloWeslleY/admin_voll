@@ -1,6 +1,7 @@
-import { Button, FormGroup, IconPassword, InputField } from '@/components/ui'
+import { FormGroup, IconPassword, InputField } from '@/components/ui'
 import { useAuth } from '../../hooks/useAuth'
 import { useSignUp } from './useSignUp'
+import { Button } from '@mui/material'
 
 export const SignUp = () => {
   const { register, signUp, handleSubmit, errors } = useSignUp()
@@ -92,11 +93,9 @@ export const SignUp = () => {
         />
       </FormGroup>
 
-      <Button
-        type="submit"
-        label="Cadastrar"
-        sx={{ width: 280, marginTop: 8 }}
-      />
+      <Button type="submit" sx={{ width: 280, marginTop: 8 }}>
+        Cadastrar
+      </Button>
     </form>
   )
 }

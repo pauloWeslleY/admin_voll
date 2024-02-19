@@ -1,11 +1,13 @@
 import { Controller } from 'react-hook-form'
 import { Stack } from '@mui/material'
+import MuiButton from '@mui/material/Button'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import { Button, FormGroup, InputField, InputIcon } from '@/components/ui'
 import { useCreateClinic } from './hook/useCreateClinic'
 import { formatCNPJ } from '@/utils/format-cnpj/format-cnpj'
 import { useAppSelector } from '@/store/hook'
 import * as S from './create-clinic-styles'
+import { spacing } from '@/styles/utilities'
 
 export const CreateClinic = () => {
   const { step } = useAppSelector((state) => state.stepper)
@@ -198,18 +200,20 @@ export const CreateClinic = () => {
 
       <Stack sx={{ gridColumn: 'span 4', placeSelf: 'center' }}>
         {step === 0 ? (
-          <S.FormLink onClick={stepNext}>Avançar</S.FormLink>
+          <Button onClick={stepNext} sx={{ marginTop: spacing(6) }}>
+            Avançar
+          </Button>
         ) : (
           <>
             {step === 2 ? (
-              <S.FormLink onClick={stepNext}>Avançar</S.FormLink>
+              <Button onClick={stepNext} sx={{ marginTop: spacing(6) }}>
+                Avançar
+              </Button>
             ) : (
               <>
-                <Button
-                  type="submit"
-                  label="Cadastrar"
-                  sx={{ width: 200, py: 2, mt: 5 }}
-                />
+                <MuiButton type="submit" sx={{ width: 200, py: 2, mt: 5 }}>
+                  Cadastrar
+                </MuiButton>
               </>
             )}
           </>

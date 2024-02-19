@@ -66,7 +66,7 @@ const Typography = ({ fontFamily }: TypographyProps): TypographyOptions => ({
     lineHeight: 1.66,
   },
   button: {
-    textTransform: 'capitalize',
+    textTransform: 'uppercase',
   },
 })
 

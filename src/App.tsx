@@ -17,9 +17,9 @@ export const App = () => {
         const userId = user.uid
 
         dispatch(loadClinics(userId as any))
+        dispatch(loadUser(userId as any))
       }
     })
-    dispatch(loadUser())
   }, [dispatch])
 
   return (

@@ -14,6 +14,6 @@ export const Assessment = ({ professionals }: AssessmentProps) => (
         <CardAssessment key={props.id} card={props} />
       ))}
     </S.AssessmentWrap>
-    <Button label="Ver mais" />
+    <Button>Ver mais</Button>
   </>
 )

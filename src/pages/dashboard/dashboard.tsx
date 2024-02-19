@@ -1,7 +1,7 @@
-import { Navigate, useLocation, useNavigate } from 'react-router-dom'
-import { Stack, Typography, useTheme } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
+import { Button, Stack, Typography, useTheme } from '@mui/material'
 import { Assessment, Wrapper } from '@/components/layout'
-import { Button, Graphic, Heading, Table } from '@/components/ui'
+import { Graphic, Heading, Table } from '@/components/ui'
 import { useDataConsultation } from '@/hooks/useDataConsultation'
 import { useDataProfessional } from '@/hooks/useDataProfessional'
 import { FONTS } from '@/styles'
@@ -10,10 +10,7 @@ export const DashBoard = () => {
   const { data: dataConsultation } = useDataConsultation()
   const { data: dataProfessional } = useDataProfessional()
   const navigate = useNavigate()
-  const { pathname } = useLocation()
   const theme = useTheme()
-
-  if (pathname === 'dashboard') return <Navigate to="/dashboard/home" />
 
   return (
     <Wrapper>
@@ -28,11 +25,10 @@ export const DashBoard = () => {
       </Heading>
 
       <Stack flexDirection="row" alignItems="center" gap={3}>
-        <Button label="Cadastrar especialista" />
-        <Button
-          label="Cadastrar clinica"
-          onClick={() => navigate('/dashboard/clinics')}
-        />
+        <Button>Cadastrar especialista</Button>
+        <Button onClick={() => navigate('/dashboard/clinics')}>
+          Cadastrar clinica
+        </Button>
       </Stack>
 
       <Heading image="consultation" sx={{ marginBlock: theme.spacing(8) }}>
@@ -47,10 +43,9 @@ export const DashBoard = () => {
 
       <Table data={dataConsultation} />
 
-      <Button
-        label="Ver mais"
-        sx={{ py: 2, px: 3, marginTop: theme.spacing(8.2) }}
-      />
+      <Button sx={{ py: 2, px: 3, marginTop: theme.spacing(8.2) }}>
+        Ver Mais
+      </Button>
 
       <Heading image="graphic" sx={{ marginTop: theme.spacing(8) }}>
         <Typography

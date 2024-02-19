@@ -12,9 +12,11 @@ import { Palette } from './palette'
 import { spacing } from '@/styles/utilities'
 import { FONTS } from '@/styles'
 import { GlobalStyles } from './global-styles'
+import { ComponentOverrides } from './overrides'
 
 export const ThemeCustomization = ({ children }: { children: ReactNode }) => {
   const themePalette = Palette({ theme: 'light' })
+  const components = ComponentOverrides()
   const themeTypography = Typography({
     fontFamily: FONTS.fontFamily.PUBLIC_SANS,
   })
@@ -24,8 +26,9 @@ export const ThemeCustomization = ({ children }: { children: ReactNode }) => {
       spacing,
       typography: themeTypography,
       palette: themePalette,
+      components,
     }),
-    [themeTypography, themePalette],
+    [themeTypography, themePalette, components],
   )
 
   const theme = createTheme(themeOptions)

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { Button } from '@/components/ui'
+import { Button } from '@mui/material'
 import { Input } from './modules'
 import * as S from './navbar-styles'
 
@@ -13,7 +13,7 @@ export const NavBar = () => {
 
       <Input placeholder="Digite sua busca" />
 
-      <Button label="Login" onClick={() => navigate('/auth')} />
+      <Button onClick={() => navigate('/auth')}>Login</Button>
     </S.NavBar>
   )
 }
