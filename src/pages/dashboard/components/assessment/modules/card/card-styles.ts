@@ -1,6 +1,5 @@
 import { styled } from '@mui/material'
 import { grey } from '@mui/material/colors'
-import { COLORS } from '@/styles'
 
 export const Card = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -8,16 +7,14 @@ export const Card = styled('div')(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'space-between',
 
-  flex: '40%',
+  flex: '20%',
   maxWidth: '100%',
 
-  background: COLORS.white,
+  background: theme.palette.common.white,
 
   padding: theme.spacing(3.8),
-  borderRadius: theme.spacing(3.5),
+  borderRadius: theme.spacing(2),
   boxShadow: theme.shadows[3],
-
-  margin: theme.spacing(4, 5, 4),
 }))
 
 export const CardContent = styled('div')(({ theme }) => ({

@@ -17,11 +17,9 @@ const clinicServices = {
         email: doc.data().email,
         phone: doc.data().phone,
         cnpj: doc.data().cnpj,
-        cep: doc.data().cep,
         corporateReason: doc.data().corporateReason,
         address: doc.data().address,
         createdAt: doc.data().createdAt,
-        experts: doc.data().experts,
         owner: doc.data().owner,
       } as ClinicProps)
     })

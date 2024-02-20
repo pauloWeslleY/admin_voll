@@ -13,13 +13,19 @@ export const schemaClinic = z.object({
   corporateReason: z
     .string()
     .min(1, { message: 'Informe um razão social válida' }),
-  cep: z.string().refine((value) => cepRegex.test(value), {
-    message: 'Formato de CEP inválido',
-  }),
   address: z.object({
     street: z.string().min(1, { message: 'Informe o nome da rua' }),
     complement: z.string().min(1, { message: 'Informe o complemento' }),
-    number: z.string().min(1, { message: 'Informe o numero' }),
+    number: z
+      .number({
+        required_error: 'Informe o número',
+        invalid_type_error: 'Digite o número da residência',
+      })
+      .positive('Por favor digite um número válido'),
     state: z.string().min(1, { message: 'Informe o Estado' }),
+    cep: z.string().refine((value) => cepRegex.test(value), {
+      message: 'Formato de CEP inválido',
+    }),
   }),
+  role: z.string(),
 })

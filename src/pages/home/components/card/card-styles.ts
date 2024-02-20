@@ -1,4 +1,4 @@
-import { COLORS, SHADOW } from '@/styles'
+import { COLORS, FONTS, SHADOW } from '@/styles'
 import { styled } from '@mui/material'
 import MuiCard, { CardProps as MuiCardProps } from '@mui/material/Card'
 
@@ -10,7 +10,6 @@ export const CardWrapper = styled('div')(({ theme }) => ({
   gap: theme.spacing(6),
 
   marginBottom: theme.spacing(10),
-  marginInline: theme.spacing(32),
 }))
 
 export const CardItem = styled(MuiCard)<MuiCardProps>(({ theme }) => ({
@@ -19,7 +18,7 @@ export const CardItem = styled(MuiCard)<MuiCardProps>(({ theme }) => ({
   padding: theme.spacing(4, 2),
   borderRadius: 8,
 
-  flexBasis: 282,
+  flexBasis: 225,
   flexGrow: 1,
   flexShrink: 1,
 
@@ -30,6 +29,7 @@ export const CardItem = styled(MuiCard)<MuiCardProps>(({ theme }) => ({
 
   '& > p': {
     ...theme.typography.h5,
+    fontSize: FONTS.fontSizes.md,
     color: theme.palette.primary.dark,
   },
 }))

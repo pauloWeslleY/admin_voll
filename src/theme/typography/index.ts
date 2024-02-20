@@ -8,7 +8,7 @@ const Typography = ({ fontFamily }: TypographyProps): TypographyOptions => ({
   fontWeightLight: FONTS.fontWeight.light,
   fontWeightRegular: FONTS.fontWeight.regular,
   fontWeightMedium: FONTS.fontWeight.medium,
-  fontWeightBold: FONTS.fontWeight.semibold,
+  fontWeightBold: FONTS.fontWeight.bold,
   h1: {
     fontWeight: FONTS.fontWeight.semibold,
     fontSize: FONTS.fontSizes['4xl'],

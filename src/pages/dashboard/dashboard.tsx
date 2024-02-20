@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { Button, Stack, Typography, useTheme } from '@mui/material'
-import { Assessment, Wrapper } from '@/components/layout'
-import { Graphic, Heading, Table } from '@/components/ui'
+import { Wrapper } from '@/components/layout'
+import { Heading } from '@/components/ui'
+import { Assessment, Graphic, Table } from './components'
 import { useDataConsultation } from '@/hooks/useDataConsultation'
 import { useDataProfessional } from '@/hooks/useDataProfessional'
 import { FONTS } from '@/styles'
@@ -25,10 +26,7 @@ export const DashBoard = () => {
       </Heading>
 
       <Stack flexDirection="row" alignItems="center" gap={3}>
-        <Button
-          variant="default"
-          onClick={() => navigate('/dashboard/specialty')}
-        >
+        <Button onClick={() => navigate('/dashboard/specialty')}>
           Cadastrar especialista
         </Button>
         <Button onClick={() => navigate('/dashboard/clinics')}>

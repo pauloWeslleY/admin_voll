@@ -1,5 +1,4 @@
 import {
-  Paper,
   TableBody,
   TableContainer,
   TableHead,
@@ -28,7 +27,7 @@ export const Table = ({ data }: TableProps) => {
   const theme = useTheme()
 
   return (
-    <TableContainer component={Paper} sx={{ borderRadius: theme.spacing(2.6) }}>
+    <TableContainer sx={{ borderRadius: theme.spacing(2.6) }}>
       <MuiTable
         sx={{ minWidth: 700, background: grey[100] }}
         arial-label="table-customization"

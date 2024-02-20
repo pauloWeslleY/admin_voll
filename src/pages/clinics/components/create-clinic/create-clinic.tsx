@@ -40,7 +40,6 @@ export const CreateClinic = () => {
             <Controller
               name="cnpj"
               control={control}
-              defaultValue=""
               render={({ field }) => (
                 <InputField
                   {...field}
@@ -63,7 +62,7 @@ export const CreateClinic = () => {
               {...register('email')}
               id="email"
               placeholder="Digite o email da clinica"
-              type={'text'}
+              type="text"
               error={!!errors.email?.message}
             />
           </FormGroup>
@@ -80,7 +79,7 @@ export const CreateClinic = () => {
               {...register('corporateReason')}
               id="corporateReason"
               placeholder="Digite a razão social"
-              type={'text'}
+              type="text"
               error={!!errors.corporateReason?.message}
             />
           </FormGroup>
@@ -101,7 +100,7 @@ export const CreateClinic = () => {
               {...register('phone')}
               id="phone"
               placeholder="(xx) 0000-0000"
-              type={'text'}
+              type="text"
               error={!!errors.phone?.message}
             />
           </FormGroup>
@@ -110,16 +109,16 @@ export const CreateClinic = () => {
             htmlFor="cep"
             props={{
               label: 'CEP',
-              errors: errors.cep?.message,
+              errors: errors.address?.cep?.message,
             }}
             sx={{ gridColumn: '2 / 4' }}
           >
             <InputField
-              {...register('cep')}
+              {...register('address.cep')}
               id="cep"
               placeholder="Digite o cep da clinica"
-              type={'text'}
-              error={!!errors.cep?.message}
+              type="text"
+              error={!!errors.address?.cep?.message}
               startAdornment={<InputIcon icon={LocationOnIcon} />}
             />
           </FormGroup>
@@ -138,7 +137,7 @@ export const CreateClinic = () => {
                 {...register('address.street')}
                 placeholder="Digite o nome da rua"
                 id="street"
-                type={'text'}
+                type="text"
                 error={!!errors.address?.street?.message}
               />
             </FormGroup>
@@ -151,10 +150,17 @@ export const CreateClinic = () => {
               sx={{ gridColumn: '1 / 3' }}
             >
               <InputField
-                {...register('address.number')}
-                placeholder="Digite o numero da clinica"
+                {...register('address.number', {
+                  required: 'Este campo é obrigatório',
+                  min: {
+                    value: 1,
+                    message: 'O número deve ser maior que 1',
+                  },
+                  valueAsNumber: true,
+                })}
+                placeholder="Número"
                 id="number"
-                type={'text'}
+                type="number"
                 error={!!errors.address?.number?.message}
               />
             </FormGroup>
@@ -170,7 +176,7 @@ export const CreateClinic = () => {
                 {...register('address.complement')}
                 placeholder="Digite o complemento"
                 id="complement"
-                type={'text'}
+                type="text"
                 error={!!errors.address?.complement?.message}
               />
             </FormGroup>
@@ -184,7 +190,7 @@ export const CreateClinic = () => {
             >
               <InputField
                 {...register('address.state')}
-                placeholder="Digite o estado"
+                placeholder="Estado"
                 id="state"
                 type={'text'}
                 error={!!errors.address?.state?.message}

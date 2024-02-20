@@ -13,7 +13,6 @@ export const TestimonialsWrapper = styled('div')(({ theme }) => ({
 
   marginTop: theme.spacing(10),
   marginBottom: theme.spacing(9),
-  marginInline: theme.spacing(32),
 
   '& > h2': {
     ...theme.typography.h2,

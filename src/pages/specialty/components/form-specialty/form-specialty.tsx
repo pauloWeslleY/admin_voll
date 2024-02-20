@@ -11,19 +11,11 @@ import Typography from '@mui/material/Typography'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import { FormGroup, InputField, InputIcon } from '@/components/ui'
 import * as S from './form-specialty-styles'
-
-const plansHealth = [
-  'Sulamerica',
-  'Unimed',
-  'Bradesco',
-  'Amil',
-  'BioSaúde',
-  'Biovida',
-  'Outro',
-]
+import { useAppSelector } from '@/store/hook'
 
 export const FormSpecialty = () => {
   const [showPlans, setShowPlans] = useState<boolean>(false)
+  const plansHealth = useAppSelector((state) => state.plansHealth)
 
   const handleShowPlans = () => setShowPlans(!showPlans)
 

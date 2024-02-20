@@ -4,9 +4,9 @@ import { FormStepper } from './components'
 
 export const Clinics = () => {
   return (
-    <Wrapper>
+    <Wrapper sx={{ height: 'auto' }}>
       <Typography component="h2" variant="h3" sx={{ textAlign: 'center' }}>
-        Primeiro, alguns dados básicos:
+        Primeiro, alguns dados básicos
       </Typography>
 
       <FormStepper />

@@ -55,9 +55,9 @@ export const Button = () => {
   const hoverStyle = {
     '&:hover': {
       color: COLORS.blue[400],
-      backgroundColor: COLORS.blue[200],
+      backgroundColor: COLORS.blue[100],
       borderColor: COLORS.blue[200],
-      boxShadow: `0 2px 1px 'rgba(45, 45, 60, 0.2)', inset 0 1.5px 1px ${COLORS.blue[400]}, inset 0 -2px 1px ${blue[600]}`,
+      boxShadow: `0 2px 1px 'rgba(0, 0, 0, 0.5)', inset 0 1.5px 1px ${COLORS.blue[400]}, inset 0 -2px 1px ${blue[600]}`,
     },
   }
 
@@ -83,12 +83,11 @@ export const Button = () => {
           color: COLORS.white,
           borderRadius: '0.5rem',
           padding: '12px 16px',
-          boxShadow: 'none',
+          boxShadow: `0 2px 1px 'rgba(0, 0, 0, 0.5)', inset 0 1.5px 1px ${COLORS.blue[100]}, inset 0 -2px 1px ${blue[50]}`,
           border: `1px solid ${COLORS.blue[400]}`,
           lineHeight: FONTS.lineHeights.base,
           fontWeight: FONTS.fontWeight.bold,
           fontSize: FONTS.fontSizes.md,
-
           ...hoverStyle,
           ...activeStyle,
         },

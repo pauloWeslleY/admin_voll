@@ -24,7 +24,7 @@ export const InfoClinicAddress = () => {
       </S.InfoClinic>
       <S.InfoClinic gridCol="3 / 4">
         <h3>Cep</h3>
-        <p>{data.cep}</p>
+        <p>{data.address.cep}</p>
       </S.InfoClinic>
     </S.InfoClinicContent>
   )
