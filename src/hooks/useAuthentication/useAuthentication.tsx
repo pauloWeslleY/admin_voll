@@ -6,8 +6,7 @@ import { logout, setAuth } from '@/store/reducers'
 import { toasts } from '@/components/ui'
 import { useAppDispatch } from '@/store/hook'
 import { authService } from '@/services/auth-services'
-import { SignUpProps } from '@/pages/auth/modules/sign-up/sign-up-props'
-import { SignInProps } from '@/pages/auth/modules/sign-in/sign-in-props'
+import { SignInProps, SignUpProps } from '@/pages/auth/components'
 
 const useAuthentication = () => {
   const dispatch = useAppDispatch()
