@@ -4,7 +4,7 @@ import LogoutIcon from '@mui/icons-material/Logout'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { Menu } from '@/components/ui'
 import { useAppSelector } from '@/store/hook'
-import { useAuthentication } from '@/pages/auth/hooks/useAuthentication'
+import { useAuthentication } from '@/hooks/useAuthentication'
 
 export const MenuHeader = () => {
   const { user } = useAppSelector((state) => state.auth)

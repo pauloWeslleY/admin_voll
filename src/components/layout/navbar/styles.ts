@@ -7,6 +7,10 @@ export const NavBar = styled('div')(({ theme }) => ({
   flexDirection: 'row',
   alignItems: 'center',
   gap: theme.spacing(6),
+
+  [theme.breakpoints.down('md')]: {
+    display: 'none',
+  },
 }))
 
 export const NavLink = styled(Link)<LinkProps>(({ theme }) => ({

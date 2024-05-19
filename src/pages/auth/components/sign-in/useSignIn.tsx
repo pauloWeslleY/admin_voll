@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { SignInProps } from './sign-in-props'
-import { useAuthentication } from '../../hooks/useAuthentication'
-import { schemaSignIn } from './schema-sing-in'
+import { schemaSignIn } from './schema-sign-in'
+import { useAuthentication } from '@/hooks/useAuthentication'
 
 export const useSignIn = () => {
   const { handleSignIn } = useAuthentication()

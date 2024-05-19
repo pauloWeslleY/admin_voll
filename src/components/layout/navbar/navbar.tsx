@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@mui/material'
 import { Input } from './modules'
-import * as S from './navbar-styles'
+import * as S from './styles'
 
 export const NavBar = () => {
   const navigate = useNavigate()
@@ -9,11 +9,11 @@ export const NavBar = () => {
   return (
     <S.NavBar>
       <S.NavLink to="#">Sobre</S.NavLink>
-      <S.NavLink to="/auth">Cadastre-se</S.NavLink>
+      <S.NavLink to="/auth/signup">Cadastre-se</S.NavLink>
 
       <Input placeholder="Digite sua busca" />
 
-      <Button onClick={() => navigate('/auth')}>Login</Button>
+      <Button onClick={() => navigate('/auth/signin')}>Login</Button>
     </S.NavBar>
   )
 }

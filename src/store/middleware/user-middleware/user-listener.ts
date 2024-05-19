@@ -25,15 +25,8 @@ listenerUser.startListening({
 
     if (response.status === 'ok') {
       const userAuth = {
+        ...response.value,
         uid: userIdLogged,
-        username: response.value.username,
-        email: response.value.email,
-        photoUrl: response.value.photoUrl,
-        clinics: response.value.clinics,
-        cpf: response.value.cpf,
-        phone: response.value.phone,
-        createdAt: response.value.createdAt,
-        updatedAt: response.value.updatedAt,
       } satisfies UserProps
 
       dispatch(getUserLogged({ user: userAuth, isLogged: true }))

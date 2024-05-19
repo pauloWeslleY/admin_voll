@@ -8,8 +8,8 @@ import { useDataProfessional } from '@/hooks/useDataProfessional'
 import { FONTS } from '@/styles'
 
 export const DashBoard = () => {
-  const { data: dataConsultation } = useDataConsultation()
-  const { data: dataProfessional } = useDataProfessional()
+  const { loadConsultationQueries } = useDataConsultation()
+  const { loadProfessional } = useDataProfessional()
   const navigate = useNavigate()
   const theme = useTheme()
 
@@ -26,9 +26,9 @@ export const DashBoard = () => {
       </Heading>
 
       <Stack flexDirection="row" alignItems="center" gap={3}>
-        <Button onClick={() => navigate('/dashboard/specialty')}>
+        {/* <Button onClick={() => navigate('/dashboard/specialty')}>
           Cadastrar especialista
-        </Button>
+        </Button> */}
         <Button onClick={() => navigate('/dashboard/clinics')}>
           Cadastrar clinica
         </Button>
@@ -44,11 +44,11 @@ export const DashBoard = () => {
         </Typography>
       </Heading>
 
-      <Table data={dataConsultation} />
+      <Table data={loadConsultationQueries()} />
 
-      <Button sx={{ py: 2, px: 3, marginTop: theme.spacing(8.2) }}>
+      {/* <Button sx={{ py: 2, px: 3, marginTop: theme.spacing(8.2) }}>
         Ver Mais
-      </Button>
+      </Button> */}
 
       <Heading image="graphic" sx={{ marginTop: theme.spacing(8) }}>
         <Typography
@@ -74,8 +74,8 @@ export const DashBoard = () => {
 
       <Graphic
         props={{
-          consultation: dataConsultation,
-          professional: dataProfessional,
+          consultation: loadConsultationQueries(),
+          professional: loadProfessional(),
         }}
       />
 
@@ -101,7 +101,7 @@ export const DashBoard = () => {
         Dezembro/22
       </Typography>
 
-      <Assessment professionals={dataProfessional} />
+      <Assessment professionals={loadProfessional()} />
     </Wrapper>
   )
 }

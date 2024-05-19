@@ -1,25 +1,22 @@
 import { ReactNode } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useMediaQuery, useTheme } from '@mui/material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { Icon, Menu } from '@/components/ui'
 import { useAppSelector } from '@/store/hook'
-import * as S from './header-styles'
 import { MenuHeader } from './modules'
 import { useHeader } from './useHeader'
+import { HeaderMobile } from './header-mobile'
+import * as S from './styles'
 
-type HeaderProps = { children: ReactNode }
-
-export const Header = ({ children }: HeaderProps) => {
+export const Header = ({ children }: { children: ReactNode }) => {
   const { user, isLogged } = useAppSelector((state) => state.auth)
-  const navigate = useNavigate()
-  const { menuHeader } = useHeader()
+  const { menuHeader, pushHome } = useHeader()
+  const theme = useTheme()
+  const isMobileScreen = useMediaQuery(theme.breakpoints.down('md'))
 
   return (
     <S.Header>
-      <Icon.Logo
-        onClick={() => navigate('/home')}
-        style={{ cursor: 'pointer' }}
-      />
+      <Icon.Logo onClick={pushHome} style={{ cursor: 'pointer' }} />
 
       {isLogged ? (
         <S.HeaderWrapper>
@@ -28,8 +25,8 @@ export const Header = ({ children }: HeaderProps) => {
               Dashboard <KeyboardArrowDownIcon />
             </Menu.Trigger>
             <Menu.List>
-              {menuHeader.map((item, index) => (
-                <Menu.Item key={index} onClick={() => navigate(item.path)}>
+              {menuHeader().map((item, index) => (
+                <Menu.Item key={index} onClick={item.path}>
                   {item.label}
                 </Menu.Item>
               ))}
@@ -45,6 +42,8 @@ export const Header = ({ children }: HeaderProps) => {
       ) : (
         <> {children} </>
       )}
+
+      {isMobileScreen && <HeaderMobile />}
     </S.Header>
   )
 }

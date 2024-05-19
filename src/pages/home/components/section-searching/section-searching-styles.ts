@@ -14,4 +14,16 @@ export const SectionSearchingWrap = styled('div')(({ theme }) => ({
     flexDirection: 'row',
     gap: theme.spacing(4),
   },
+
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(5),
+    marginBlock: theme.spacing(7),
+
+    '& > form': {
+      width: '100%',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexWrap: 'wrap',
+    },
+  },
 }))

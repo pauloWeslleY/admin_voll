@@ -28,6 +28,10 @@ export const TestimonialCardWrapper = styled('div')(({ theme }) => ({
   paddingInline: theme.spacing(32),
 
   width: '100%',
+
+  [theme.breakpoints.down('md')]: {
+    paddingInline: theme.spacing(2),
+  },
 }))
 
 export const TestimonialCard = styled('div')(({ theme }) => ({

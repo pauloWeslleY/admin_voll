@@ -1,9 +1,14 @@
 import { RouteObject } from 'react-router-dom'
-import { Authentication } from '@/pages'
+import { AuthLayout } from '@/layout'
+import { Auth } from '@/pages'
 
-const AuthRoutes: RouteObject = {
+const AuthRoutes = (): RouteObject => ({
   path: '/auth',
-  element: <Authentication />,
-}
+  element: <AuthLayout />,
+  children: [
+    { path: 'signin', element: <Auth.SignIn /> },
+    { path: 'signup', element: <Auth.SignUp /> },
+  ],
+})
 
 export { AuthRoutes }

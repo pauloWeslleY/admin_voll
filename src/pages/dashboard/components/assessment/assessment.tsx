@@ -1,5 +1,4 @@
 import { ProfessionalProps } from '@/components/types'
-import { Button } from '@/components/ui'
 import { CardAssessment } from './modules'
 import * as S from './assessment-styles'
 
@@ -14,6 +13,6 @@ export const Assessment = ({ professionals }: AssessmentProps) => (
         <CardAssessment key={props.id} card={props} />
       ))}
     </S.AssessmentWrap>
-    <Button>Ver mais</Button>
+    {/* <Button>Ver mais</Button> */}
   </>
 )
