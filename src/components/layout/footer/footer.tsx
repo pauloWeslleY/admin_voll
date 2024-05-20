@@ -1,38 +1,27 @@
 import { Link, Typography } from '@mui/material'
-import { Icon } from '@/components/ui'
 import { FONTS } from '@/styles'
-import * as S from './footer-styles'
+import * as S from './styles'
+import { useFooter } from './useFooter'
 
 export const Footer = () => {
+  const { listIconFooter } = useFooter()
+
   return (
     <S.FooterWrap>
       <ul>
-        <li>
-          <Link href="#">
-            <Icon.Facebook />
-          </Link>
-        </li>
-        <li>
-          <Link href="#">
-            <Icon.WhatsApp />
-          </Link>
-        </li>
-        <li>
-          <Link href="#">
-            <Icon.Google />
-          </Link>
-        </li>
-        <li>
-          <Link href="#">
-            <Icon.Instagram />
-          </Link>
-        </li>
+        {listIconFooter().map(({ id, icon: Icon }) => (
+          <li key={id}>
+            <Link href="#">
+              <Icon />
+            </Link>
+          </li>
+        ))}
       </ul>
 
       <Typography
         component="span"
         variant="subtitle1"
-        color="white"
+        color={(theme) => theme.palette.common.white}
         sx={{ fontWeight: FONTS.fontWeight.light }}
       >
         2023 © Desenvolvido por Alura | Projeto fictício sem fins comerciais.

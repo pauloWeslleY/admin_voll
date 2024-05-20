@@ -1,4 +1,4 @@
-import * as S from './testimonials-styles'
+import * as S from './styles'
 
 type TestimonialCardProps = {
   props: {

@@ -1,6 +1,6 @@
 import { TestimonialCard } from './testimonial-card'
-import { useHome } from '../../useHome'
-import * as S from './testimonials-styles'
+import { useHome } from '@/pages/home/useHome'
+import * as S from './styles'
 
 export const Testimonials = () => {
   const { TESTIMONIAL } = useHome()

@@ -1,10 +1,11 @@
-import { Navigate, Outlet } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import { useAppSelector } from '@/store/hook'
+import { RootLayout } from '@/layout'
 
 const PrivateRoutes = () => {
   const { isLogged } = useAppSelector((state) => state.auth)
 
-  return isLogged ? <Outlet /> : <Navigate to="/home" />
+  return isLogged ? <RootLayout /> : <Navigate to="/home" />
 }
 
 export { PrivateRoutes }

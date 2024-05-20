@@ -1,29 +1,21 @@
-import {
-  TableBody,
-  TableContainer,
-  TableHead,
-  TableRow,
-  useTheme,
-} from '@mui/material'
+import TableBody from '@mui/material/TableBody'
+import TableContainer from '@mui/material/TableContainer'
+import TableHead from '@mui/material/TableHead'
+import TableRow from '@mui/material/TableRow'
 import MuiTable from '@mui/material/Table'
-import { ConsultationProps } from '@/components/types'
-import * as S from './table-styles'
+import { useTheme } from '@mui/material'
 import { grey } from '@mui/material/colors'
-
-const TABLE_HEADER = [
-  'Data',
-  'horário',
-  'Profissional',
-  'Especialidade',
-  'Paciente',
-  'Modalidade',
-]
+import { ConsultationProps } from '@/components/types'
+import { useTable } from './useTable'
+import { TableContent } from './table-content'
+import * as S from './styles'
 
 type TableProps = {
   data: ConsultationProps[] | null
 }
 
 export const Table = ({ data }: TableProps) => {
+  const { loadTableHeader } = useTable()
   const theme = useTheme()
 
   return (
@@ -34,7 +26,7 @@ export const Table = ({ data }: TableProps) => {
       >
         <TableHead>
           <TableRow>
-            {TABLE_HEADER.map((props, index) => (
+            {loadTableHeader().map((props, index) => (
               <S.TableCell key={index}>{props}</S.TableCell>
             ))}
           </TableRow>
@@ -43,24 +35,7 @@ export const Table = ({ data }: TableProps) => {
         <TableBody>
           {data?.map((props) => (
             <S.TableRow key={props.id}>
-              <S.TableCell component="th" scope="row">
-                {new Date(props.date).toLocaleDateString()}
-              </S.TableCell>
-              <S.TableCell component="th" scope="row">
-                {props.hour}
-              </S.TableCell>
-              <S.TableCell component="th" scope="row">
-                {props.professional[0].name}
-              </S.TableCell>
-              <S.TableCell component="th" scope="row">
-                {props.professional[0].specialty}
-              </S.TableCell>
-              <S.TableCell component="th" scope="row">
-                {props.patient}
-              </S.TableCell>
-              <S.TableCell component="th" scope="row">
-                {props.modality}
-              </S.TableCell>
+              <TableContent data={props} />
             </S.TableRow>
           ))}
         </TableBody>
